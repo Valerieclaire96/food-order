@@ -66,3 +66,55 @@
     background-color: #ff4757;
     color: white
 }
+
+/* Table Styles for Manage Admin */
+.tbl-full{
+    width: 100%
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+table tr td{
+    padding: 1%;
+}
+
+/* add admin styles */
+.tbl-30{
+    width: 30%;
+}
+
+/* button styles */
+.btn{
+    padding: .75%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5%;
+}
+.primary{
+    background: #1e90ff;
+}
+.primary:hover{
+    background: #3742fa;
+}
+
+.secondary{
+    background: #7bed9f;
+    color: black !important;
+}
+
+.secondary:hover{
+    background: #2ed573;
+    color: black !important;
+}
+
+.danager{
+    background: #ff6b81;
+}
+
+.danager:hover{
+    background: #ff4757;
+}

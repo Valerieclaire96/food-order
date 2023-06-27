@@ -8,18 +8,48 @@
 </head>
 <body>
     <?php include('partials/menu.php')?>
-
-    <!-- Main Content Section Starts -->
-    <div class="main-content">
-        <div class="wrapper">
-            <h1>Manage Food</h1>
-           
-            <div class="clear-fix"></div>
+        <div class="main-content">
+            <div class="wrapper">
+                <h1>Manage Food</h1>
+                <br />
+                <a href="#" class="btn primary">Add Food</a>
+                <table class="tbl-full">
+                    <tr>
+                        <th>Serial Number</th>
+                        <th>Full Name</th>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>1.</td>
+                        <td>Valerie Dubach</td>
+                        <td>ValerieClaire96</td>
+                        <td>
+                            <a href="#" class="btn secondary">Update Food</a>
+                            <a href="#" class="btn danager">Delete Food</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Valerie Dubach</td>
+                        <td>ValerieClaire96</td>
+                        <td>
+                            <a href="#" class="btn secondary">Update Food</a>
+                            <a href="#" class="btn danager">Delete Food</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Valerie Dubach</td>
+                        <td>ValerieClaire96</td>
+                        <td>
+                            <a href="#" class="btn secondary">Update Category</a>
+                            <a href="#" class="btn danager">Delete Category</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
-    <!-- Main Content Section Ends -->
     <?php include('partials/footer.php')?>
-
-
 </body>
 </html>
