@@ -1,4 +1,5 @@
-    <!-- Menu Section Starts -->
+<?php include('../config/constraints.php') ?>
+    
     <div class="menu text-center">
         <div class="wrapper">
             <ul>
@@ -10,4 +11,3 @@
             </ul>
         </div>
     </div>
-    <!-- Menu Section Ends -->

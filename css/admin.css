@@ -111,10 +111,10 @@ table tr td{
     color: black !important;
 }
 
-.danager{
+.danger{
     background: #ff6b81;
 }
 
-.danager:hover{
+.danger:hover{
     background: #ff4757;
 }

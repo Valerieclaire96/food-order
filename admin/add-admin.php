@@ -13,7 +13,7 @@
     <div class="main-content">
         <div class="wrapper">
             <h1>Add Admin</h1>
-            <form action="" method="POST">
+            <form actions="" >
                 <table class="tbl-30">
                     <tr>
                         <td>Full Name: </td>
@@ -24,7 +24,7 @@
                     <tr>
                         <td>Username: </td>
                         <td>
-                            <input type="text" name="user_name" placeholder="Enter your username"/>
+                            <input type="text" name="username" placeholder="Enter your username"/>
                         </td>
                     </tr>
                     <tr>
@@ -33,8 +33,8 @@
                             <input type="password" name="password" placeholder="Enter your password"/>
                         </td>
                     </tr>
-                    <tr colspan="2">
-                        <td>
+                    <tr>
+                        <td colspan="2">
                             <input type="submit" name="submit" value="Add Admin" class="btn secondary"/>
                         </td>
                     </tr>
@@ -45,25 +45,42 @@
     </div>
     <!-- Main Content Section Ends -->
     <?php include('partials/footer.php')?>
+
     <?php 
         // Process value from form and save it in DB
-        // Check whether the submit button is clicked or not   
+        // Check whether the submit button is clicked or not  
+        // echo $conn; 
         if(isset($_POST['submit'])){
-            //Button Clicked
-            
             //1. Get Data from form
-            $full_name = $_POST["full_name"];
-            $username = $_POST["username"];
-            $password = $_POST["password"]
+            $full_name = $_POST['full_name'];
+            $username = $_POST['username'];
+            $password = md5($_POST['password']); //encrypted with md5
 
             //2. SQL Query to Save the data in the DB
             $sql = "INSERT INTO tbl_admin SET
             full_name = '$full_name',
             username = '$username',
-            password = '$password' "
+            password = '$password' 
+            ";
+
+            // Uses variables from constraints.php to execute query and save data into DB
+            
+            $res = mysqli_query($conn, $sql) or die(mysqli_error());
+            //Check whether the (query is executed) data is inserted or not and display appropriate message
+            if($res==TRUE)
+            {
+                //Data inserted
+                echo "Data inserted";
+            }
+            else{
+                //failed to insert data
+                echo "Data not inserted";
+           
+            };
         }
-        echo $sql
-    ?>
+        
+        
+?>
     
 
 </body>
