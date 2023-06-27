@@ -11,7 +11,6 @@
 }
 
 .wrapper{
-    border: 1px solid black;
     padding: 1%;
     width: 80%;
     margin: 0 auto;
@@ -20,8 +19,16 @@
 .text-center{
     text-align: center;
 }
+
+.clear-fix{
+    float: none;
+    clear: both;
+}
 /* CSS for Menu */
 
+.menu{
+    border-bottom: 1px solid black;
+}
 .menu ul {
     list-style-type: none;
 }
@@ -38,6 +45,20 @@
 
 .menu ul li a:hover{
     color: #ff4757;
+}
+
+/* CSS for Main Section */
+.main-content{
+    background-color: #f1f2f6;
+    padding: 3% 0;
+}
+
+.col-4{
+    width: 18%;
+    background: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
 }
 
 /* css for Footer */
