@@ -1,4 +1,4 @@
-<?php include('../config/constraints.php') ?>
+<?php include('../config/constraints.php'); ?>
     
     <div class="menu text-center">
         <div class="wrapper">
