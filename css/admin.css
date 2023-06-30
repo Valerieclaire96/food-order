@@ -118,3 +118,11 @@ table tr td{
 .danger:hover{
     background: #ff4757;
 }
+
+.success{
+    color: #2ed573;
+}
+
+.error{
+    color:#ff4757
+}

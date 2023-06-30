@@ -13,7 +13,15 @@
     <div class="main-content">
         <div class="wrapper">
             <h1>Add Admin</h1>
-            <form actions="" method="POST">
+            <?php
+                if(isset($_SESSION['add'])) //checing if the session is set or not
+                {
+                    echo $_SESSION['add']; //dispaly the session message if set
+                    unset($_SESSION['add']); //remove session message
+                }
+            ?>
+            <br/>
+            <form action="" method="POST">
                 <table class="tbl-30">
                     <tr>
                         <td>Full Name: </td>
@@ -55,7 +63,7 @@
             //1. Get Data from form
                 //1. Get the Data from form
         $full_name = $_POST['full_name'];
-        $user_name = $_POST['username'];
+        $username = $_POST['username'];
         $password = md5($_POST['password']); //Password Encryption with MD5
 
         //2. SQL Query to Save the data into database
@@ -67,17 +75,21 @@
  
         //3. Executing Query and Saving Data into Datbase
         $res = mysqli_query($conn, $sql) or die(mysqli_error());
-            //Check whether the (query is executed) data is inserted or not and display appropriate message
-            // if($res==TRUE)
-            // {
-            //     //Data inserted
-            //     echo "Data inserted";
-            // }
-            // else{
-            //     //failed to insert data
-            //     echo "Data not inserted";
-           
-            // };
+            // Check whether the (query is executed) data is inserted or not and display appropriate message
+            if($res==TRUE)
+            {
+                //Data inserted
+                // Creat a session variable to display message
+                $_SESSION['add'] = "<div class='success'>Admin Added Successfully</div>";
+                //Redirect page to manage admin page
+                header("location:".SITEURL."admin/manage-admin.php");
+            }
+            else{
+                //failed to insert data
+                $_SESSION['add'] = "<div class='error'>Failed to add Admin</div>";
+                //Redirect page to manage admin page
+                header("location:".SITEURL."admin/add-admin.php");
+            };
         }
         
         
