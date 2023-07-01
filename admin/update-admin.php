@@ -45,7 +45,7 @@
                         
                     };
                     
-            }
+                }
             ?>
 
             <form action="" method="POST">
@@ -62,12 +62,6 @@
                             <input type="text" name="username" value="<?php echo $username; ?>" />
                         </td>
                     </tr>
-                    <!-- <tr>
-                        <td>Password: </td>
-                        <td>
-                            <input type="password" name="password" placeholder="Enter your password"/>
-                        </td>
-                    </tr> -->
                     <tr>
                         <td colspan="2">
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -107,7 +101,8 @@
                 $_SESSION['update'] = "<div class='success'>Admin was Updated Successfully</div>";
                 header('location:'.SITEURL.'/admin/manage-admin.php');
             }
-            else{
+            else
+            {
                 $_SESSION['update'] = "<div class='error'>Failed to Update Admin. Try again later.</div>";
                 header('location:'.SITEURL.'/admin/manage-admin.php');
             }
