@@ -31,21 +31,23 @@
                     echo $_SESSION['update']; //displaying session message
                     unset($_SESSION['update']); //removeing session message
                 }
-                if(isset($_SESSION['user-not-found']))
+                if(isset($_SESSION['pw-changed']))
                 {
-                    echo $_SESSION['user-not-found']; //displaying session message
-                    unset($_SESSION['user-not-found']); //removeing session message
+                    echo $_SESSION['pw-changed']; //displaying session message
+                    unset($_SESSION['pw-changed']); //removeing session message
                 }
                 if(isset($_SESSION['pws-dont-match']))
                 {
                     echo $_SESSION['pws-dont-match']; //displaying session message
                     unset($_SESSION['pws-dont-match']); //removeing session message
                 }
-                if(isset($_SESSION['pw-changed']))
+                if(isset($_SESSION['user-not-found']))
                 {
-                    echo $_SESSION['pw-changed']; //displaying session message
-                    unset($_SESSION['pw-changed']); //removeing session message
-                };
+                    echo $_SESSION['user-not-found']; //displaying session message
+                    unset($_SESSION['user-not-found']); //removeing session message
+                }
+                
+                
             ?>
             <br/><br/>
             <a href="add-admin.php" class="btn primary">Add Admin</a>

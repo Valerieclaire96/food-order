@@ -16,35 +16,8 @@
 
             <br />
             <?php
-    // 1. get the id of the admin to be updated
-                $id = $_GET['id'];
-
-                // creat sql query to get the details
-                $sql = "SELECT * FROM tbl_admin WHERE id=$id";
-                
-                // Execute the Query
-                $res = mysqli_query($conn, $sql) or die(mysqli_error());
-
-                // Check whethere the query executed successfully or not
-                if($res == TRUE)
-                {
-                    // check whether the data is available or not
-                    $count = mysqli_num_rows($res);
-                    // check if there is data
-                    if($count == 1)
-                    {
-                        //get the details
-                        $row = mysqli_fetch_assoc($res);
-
-                        $full_name = $row['full_name'];
-                        $username = $row['username'];
-                    }
-                    else{
-                        //redirect to manage admin page
-                        header('location:'.SITEURL.'/admin/manage-admin.php');
-                        
-                    };
-                    
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
                 }
             ?>
 
@@ -65,12 +38,12 @@
                     <tr>
                         <td>Confrim Password: </td>
                         <td>
-                            <input type="password" name="confirm_password" placeholder="Enter your password"/>
+                            <input type="password" name="confirm_password" placeholder="Re-enter your password"/>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <!-- <input type="hidden" name="id" value="<?php echo $id; ?>"> -->
+                           <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                             <input type="submit" name="submit" value="Change Password" class="btn secondary" />
                         </td>
                     </tr>
