@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Order Website - Home Page</title>
+    <title>Manage Admin</title>
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
@@ -66,7 +66,7 @@
                         $res = mysqli_query($conn, $sql);
 
                         //Check if the query is executed or not
-                        if($res==TRUE)
+                        if($res==true)
                         {
                             // Count rows to is we have the data in db or not
                             $count = mysqli_num_rows($res); // Function to get all the rows in database

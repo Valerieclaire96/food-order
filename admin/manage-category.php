@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Order Website - Home Page</title>
+    <title>Manage Category</title>
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
@@ -11,8 +11,15 @@
         <div class="main-content">
             <div class="wrapper">
                 <h1>Manage Category</h1>
+                <?php
+                    if(isset($_SESSION['add'])) //checing if the session is set or not
+                    {
+                        echo $_SESSION['add']; //dispaly the session message if set
+                        unset($_SESSION['add']); //remove session message
+                    }
+                ?>
                 <br />
-                <a href="#" class="btn primary">Add Category</a>
+                <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn primary">Add Category</a>
                 <table class="tbl-full">
                     <tr>
                         <th>Serial Number</th>
@@ -26,7 +33,7 @@
                         <td>ValerieClaire96</td>
                         <td>
                             <a href="#" class="btn secondary">Update Category</a>
-                            <a href="#" class="btn danager">Delete Category</a>
+                            <a href="#" class="btn danger">Delete Category</a>
                         </td>
                     </tr>
                     <tr>
@@ -35,7 +42,7 @@
                         <td>ValerieClaire96</td>
                         <td>
                             <a href="#" class="btn secondary">Update Category</a>
-                            <a href="#" class="btn danager">Delete Category</a>
+                            <a href="#" class="btn danger">Delete Category</a>
                         </td>
                     </tr>
                     <tr>
@@ -44,7 +51,7 @@
                         <td>ValerieClaire96</td>
                         <td>
                             <a href="#" class="btn secondary">Update Category</a>
-                            <a href="#" class="btn danager">Delete Category</a>
+                            <a href="#" class="btn danger">Delete Category</a>
                         </td>
                     </tr>
                 </table>

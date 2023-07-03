@@ -88,7 +88,7 @@ table tr td{
 
 /* button styles */
 .btn{
-    padding: .75%;
+    padding: .75% 1%;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -126,3 +126,13 @@ table tr td{
 .error{
     color:#ff4757
 }
+
+/* login */
+.login{
+    width: 30%;
+    border: 1px solid gray;
+    margin: 10% auto;
+    padding: 2%;
+}
+
+

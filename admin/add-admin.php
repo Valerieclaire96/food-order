@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Order Website - Home Page</title>
+    <title>Add Admin</title>
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
         //3. Executing Query and Saving Data into Datbase
         $res = mysqli_query($conn, $sql) or die(mysqli_error());
             // Check whether the (query is executed) data is inserted or not and display appropriate message
-            if($res==TRUE)
+            if($res==true)
             {
                 //Data inserted
                 // Creat a session variable to display message
