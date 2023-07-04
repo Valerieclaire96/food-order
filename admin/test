@@ -95,8 +95,7 @@
                             $active = "No";
                         };
 
-                        // print_r(end(explode('.',($_FILES['image']['name']))));
-                        // die();
+                        print_r($_FILES['image']['name']);
                     
 
                     // check if image is selected
@@ -106,8 +105,9 @@
                         // to upload image we need image name, source path and destination path
                         $image_name = $_FILES['image']['name'];
 
-                        if($image_name != "")
+                        if($image_name != " ")
                         {
+
                             //Auto Rename our Image
                             //Get the Extension of our image (jpg, png, gif, etc) e.g. "specialfood1.jpg"
                             $ext = end(explode('.', $image_name));
@@ -118,30 +118,41 @@
 
                             $source_path = $_FILES['image']['tmp_name'];
 
-                            $destination_path = "../images/category".$image_name;
+                            $destination_path = "../images/category/".$image_name;
+
                             //Finally Upload the Image
-                            
                             $upload = move_uploaded_file($source_path, $destination_path);
-                            // print_r($upload);
-                            // die();
+
+                            //Check whether the image is uploaded or not
+                            //And if the image is not uploaded then we will stop the process and redirect with error message
+                
+                            if($upload == false)
+                            {
+                                // set error message
+                                $_SESSION['upload'] = "<div class='error'>Failed to Upload Image</div>";
+                                header("location:".SITEURL."admin/add-category.php");
+                                // stop the process because if it fails we don't want to insert data into db
+                                die();
+                            }
                         }
                     }
                     else
                     {
                         // dont upload image and set the image_name value as blank
                         $image_name = "";   
+
                     };
 
                     //2. SQL Query to Save the data into database
                     $sql = "INSERT INTO tbl_category SET 
-                    title = '$title',
+                    title ='$title',
                     image_name = '$image_name',
                     featured = '$featured',
                     active = '$active'
                     ";
             
                     //3. Executing Query and Saving Data into Datbase
-                    $res = mysqli_query($conn, $sql);
+                    $res = mysqli_query($conn, $sql) or die(mysqli_error());
                         // Check whether the (query is executed) data is inserted or not and display appropriate message
                         if($res == true)
                             {

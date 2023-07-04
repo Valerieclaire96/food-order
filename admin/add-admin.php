@@ -62,34 +62,34 @@
         if(isset($_POST['submit'])){
             //1. Get Data from form
                 //1. Get the Data from form
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = md5($_POST['password']); //Password Encryption with MD5
+            $full_name = $_POST['full_name'];
+            $username = $_POST['username'];
+            $password = md5($_POST['password']); //Password Encryption with MD5
 
-        //2. SQL Query to Save the data into database
-        $sql = "INSERT INTO tbl_admin SET 
-            full_name='$full_name',
-            username='$username',
-            password='$password'
-        ";
- 
-        //3. Executing Query and Saving Data into Datbase
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+            //2. SQL Query to Save the data into database
+            $sql = "INSERT INTO tbl_admin SET 
+                full_name='$full_name',
+                username='$username',
+                password='$password'
+            ";
+    
+            //3. Executing Query and Saving Data into Datbase
+            $res = mysqli_query($conn, $sql) or die(mysqli_error());
             // Check whether the (query is executed) data is inserted or not and display appropriate message
-            if($res==true)
-            {
-                //Data inserted
-                // Creat a session variable to display message
-                $_SESSION['add'] = "<div class='success'>Admin Added Successfully</div>";
-                //Redirect page to manage admin page
-                header("location:".SITEURL."admin/manage-admin.php");
-            }
-            else{
-                //failed to insert data
-                $_SESSION['add'] = "<div class='error'>Failed to add Admin</div>";
-                //Redirect page to manage admin page
-                header("location:".SITEURL."admin/add-admin.php");
-            };
+            if($res == true)
+                {
+                    //Data inserted
+                    // Creat a session variable to display message
+                    $_SESSION['add'] = "<div class='success'>Admin Added Successfully</div>";
+                    //Redirect page to manage admin page
+                    header("location:".SITEURL."admin/manage-admin.php");
+                }
+                else{
+                    //failed to insert data
+                    $_SESSION['add'] = "<div class='error'>Failed to add Admin</div>";
+                    //Redirect page to manage admin page
+                    header("location:".SITEURL."admin/add-admin.php");
+                };
         }
         
         
