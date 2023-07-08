@@ -18,11 +18,11 @@
                 echo $_SESSION['add']; //dispaly the session message if set
                 unset($_SESSION['add']); //remove session message
             }
-            if(isset($_SESSION['upload'])) //checing if the session is set or not
-            {
-                echo $_SESSION['upload']; //dispaly the session message if set
-                unset($_SESSION['upload']); //remove session message
-            }
+            // if(isset($_SESSION['upload'])) //checing if the session is set or not
+            // {
+            //     echo $_SESSION['upload']; //dispaly the session message if set
+            //     unset($_SESSION['upload']); //remove session message
+            // }
         ?> 
         <!-- add category form starts  -->
         <form action="" method="POST" enctype="multipart/form-data">
@@ -34,9 +34,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Select Image: </td>
+                    <td>Provide Image URL: </td>
                     <td>
-                        <input type="file" name="image"/>
+                        <input type="text" name="image_name"/>
                     </td>
                 </tr>
                 <tr>
@@ -69,7 +69,7 @@
                         //1. Get Data from form
                             //1. Get the Data from form
                     $title = $_POST['title'];
-
+                    $image_name=$_POST['image_name'];
 
                     // for radio we have to check it the radio buttons have been selected
 
@@ -100,37 +100,50 @@
                     
 
                     // check if image is selected
-                    if(isset($_FILES['image']['name']))
-                    {
-                        // upload the image
-                        // to upload image we need image name, source path and destination path
-                        $image_name = $_FILES['image']['name'];
+                    // if(isset($_FILES['image']['name']))
+                    // {
+                    //     // upload the image
+                    //     // to upload image we need image name, source path and destination path
+                    //     $image_name = $_FILES['image']['name'];
 
-                        if($image_name != "")
-                        {
-                            //Auto Rename our Image
-                            //Get the Extension of our image (jpg, png, gif, etc) e.g. "specialfood1.jpg"
-                            $ext = end(explode('.', $image_name));
+                    //     if($image_name != "")
+                    //     {
+                    //         //Auto Rename our Image
+                    //         //Get the Extension of our image (jpg, png, gif, etc) e.g. "specialfood1.jpg"
+                    //         $ext = end(explode('.', $image_name));
 
-                            //Rename the Image
-                            $image_name = "Food_Category_".rand(000, 999).'.'.$ext; // e.g. Food_Category_834.jpg
+                    //         //Rename the Image
+                    //         $image_name = "Food_Category_".rand(000, 999).'.'.$ext; // e.g. Food_Category_834.jpg
                             
 
-                            $source_path = $_FILES['image']['tmp_name'];
+                    //         $source_path = $_FILES['image']['tmp_name'];
+                    //         print_r($source_path);
+                    //         $destination_path = "../images/category/".$image_name;
 
-                            $destination_path = "../images/category".$image_name;
-                            //Finally Upload the Image
+                    //         //Finally Upload the Image
                             
-                            $upload = move_uploaded_file($source_path, $destination_path);
-                            // print_r($upload);
-                            // die();
-                        }
-                    }
-                    else
-                    {
-                        // dont upload image and set the image_name value as blank
-                        $image_name = "";   
-                    };
+                    //         $upload = move_uploaded_file($source_path, $destination_path);
+                    //         // print_r($upload);
+                    //         // die();
+
+                    //         //Check whether the image is uploaded or not
+                    //         //And if the image is not uploaded then we will stop the process and redirect with error message
+                    
+                    //         if($upload == false)
+                    //         {
+                    //             // set error message
+                    //             $_SESSION['upload'] = "<div class='error'>Failed to Upload Image</div>";
+                    //             header("location:".SITEURL."admin/add-category.php");
+                    //             // stop the process because if it fails we don't want to insert data into db
+                    //             die();
+                    //         }
+                    //     }
+                    // }
+                    // else
+                    // {
+                    //     // dont upload image and set the image_name value as blank
+                    //     $image_name = "";   
+                    // };
 
                     //2. SQL Query to Save the data into database
                     $sql = "INSERT INTO tbl_category SET 

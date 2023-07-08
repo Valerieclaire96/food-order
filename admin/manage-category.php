@@ -11,26 +11,40 @@
         <div class="main-content">
             <div class="wrapper">
                 <h1>Manage Category</h1>
+                <br/>
                 <?php
                 if(isset($_SESSION['add'])) //checing if the session is set or not
                 {
                     echo $_SESSION['add']; //dispaly the session message if set
                     unset($_SESSION['add']); //remove session message
                 }
-                if(isset($_SESSION['upload']))
+                // if(isset($_SESSION['upload']))
+                // {
+                //     echo $_SESSION['upload'];
+                //     unset($_SESSION['upload']);
+                // }
+                if(isset($_SESSION['delete']))
                 {
-                    echo $_SESSION['upload'];
-                    unset($_SESSION['upload']);
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
+                if(isset($_SESSION['update']))
+                {
+                    echo $_SESSION['update']; //displaying session message
+                    unset($_SESSION['update']); //removeing session message
                 }
                 ?>
                 <br />
                 <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn primary">Add Category</a>
+                <br/>
+                <br/>
                 <table class="tbl-full">
                     <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Featured</th>
-                        <th>Active</th>
+                        <th>ID Number:</th>
+                        <th>Title:</th>
+                        <th>Featured:</th>
+                        <th>Active:</th>
+                        <th>Actions</th>
                     </tr>
                     <?php
                     // Query to get all admin
@@ -70,9 +84,8 @@
                                         <td> <?php echo $featured; ?> </td>
                                         <td> <?php echo $active; ?> </td>
                                         <td>
-                                            <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn primary">Change Password</a>
-                                            <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn secondary">Update Admin</a>
-                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn danger">Delete Admin</a>
+                                            <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn secondary">Update Category</a>
+                                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>" class="btn danger">Delete Category</a>
                                         </td>
                                     </tr>
                                 <?php

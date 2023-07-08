@@ -54,10 +54,10 @@
             <br/><br/>
             <table class="tbl-full">
                 <tr>
-                    <th>Serial Number</th>
-                    <th>Full Name</th>
-                    <th>Username</th>
-                    <th>Actions</th>
+                    <th>Serial Number:</th>
+                    <th>Full Name:</th>
+                    <th>Username:</th>
+                    <th>Actions:</th>
                 </tr>
                 <?php
                     // Query to get all admin
