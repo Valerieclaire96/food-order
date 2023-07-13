@@ -19,16 +19,16 @@
                     echo $_SESSION['add']; //dispaly the session message if set
                     unset($_SESSION['add']); //remove session message
                 }
-                // if(isset($_SESSION['delete']))
-                // {
-                //     echo $_SESSION['delete'];
-                //     unset($_SESSION['delete']);
-                // }
-                // if(isset($_SESSION['update']))
-                // {
-                //     echo $_SESSION['update']; //displaying session message
-                //     unset($_SESSION['update']); //removeing session message
-                // }
+                if(isset($_SESSION['delete']))
+                {
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
+                if(isset($_SESSION['update']))
+                {
+                    echo $_SESSION['update']; //displaying session message
+                    unset($_SESSION['update']); //removeing session message
+                }
                 ?>
                 <br />
                 <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn primary">Add Food</a>
