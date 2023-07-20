@@ -18,11 +18,11 @@
                     echo $_SESSION['add']; //dispaly the session message if set
                     unset($_SESSION['add']); //remove session message
                 }
-                // if(isset($_SESSION['upload']))
-                // {
-                //     echo $_SESSION['upload'];
-                //     unset($_SESSION['upload']);
-                // }
+                if(isset($_SESSION['upload']))
+                {
+                    echo $_SESSION['upload'];
+                    unset($_SESSION['upload']);
+                }
                 if(isset($_SESSION['delete']))
                 {
                     echo $_SESSION['delete'];
@@ -42,6 +42,7 @@
                     <tr>
                         <th>ID Number:</th>
                         <th>Title:</th>
+                        <th>Image:</th>
                         <th>Featured:</th>
                         <th>Active:</th>
                         <th>Actions</th>
@@ -81,6 +82,18 @@
                                     <tr>
                                         <td><?php echo $sn++; ?>.</td>
                                         <td> <?php echo $title; ?> </td>
+                                        <td>
+                                        <?php if($image_name != "")
+                                        {
+                                            ?>
+                                                <img src="<?php echo $image_name; ?>" width="100px" > 
+                                                <?php                                       
+                                            }else 
+                                            {
+                                                echo "<div class='error'>Image not Added.</div>";
+                                            }
+                                            ?>
+                                            </td>
                                         <td> <?php echo $featured; ?> </td>
                                         <td> <?php echo $active; ?> </td>
                                         <td>

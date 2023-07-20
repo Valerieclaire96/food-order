@@ -38,6 +38,7 @@
                     <tr>
                         <th>ID:</th>
                         <th>Title:</th>
+                        <th>Image:</th>
                         <th>Category:</th>
                         <th>Featured:</th>
                         <th>Active:</th>
@@ -81,6 +82,18 @@
                                     <tr>
                                         <td><?php echo $sn++; ?>.</td>
                                         <td> <?php echo $title; ?> </td>
+                                        <td>
+                                        <?php if($image_name != "")
+                                        {
+                                            ?>
+                                                <img src="<?php echo $image_name; ?>" width="100px" > 
+                                                <?php                                       
+                                            }else 
+                                            {
+                                                echo "<div class='error'>Image not Added.</div>";
+                                            }
+                                            ?>
+                                            </td>
                                         <td> <?php echo $featured; ?> </td>
                                         <td> <?php echo $active; ?> </td>
                                         <td>
