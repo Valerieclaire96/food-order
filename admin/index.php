@@ -27,19 +27,6 @@
             <div class="col-4 text-center">
                 <?php
                 // sql query
-                $sql = "SELECT * FROM tbl_admin";
-                // execute the sql query
-                $res = mysqli_query($conn, $sql);
-                // count rows
-                $count = mysqli_num_rows($res);
-                ?>
-                <h1><?php echo $count; ?></h1>
-                <br/>
-                Admins
-            </div>
-            <div class="col-4 text-center">
-                <?php
-                // sql query
                 $sql1 = "SELECT * FROM tbl_category";
                 // execute the sql query
                 $res1 = mysqli_query($conn, $sql1);
@@ -75,6 +62,21 @@
                 <h1><?php echo $count3; ?></h1>
                 <br/>
                 Total Orders
+            </div>
+            <div class="col-4 text-center">
+                <?php
+                // sql query
+                $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
+                // execute the sql query
+                $res4 = mysqli_query($conn, $sql4);
+                // get the value
+                $row4= mysqli_fetch_assoc($res4);
+                // get total revenue
+                $total_revenue = $row4['Total'];
+                ?>
+                <h1>$<?php echo $total_revenue; ?></h1>
+                <br/>
+                Total Revenue
             </div>
             <div class="clear-fix"></div>
         </div>

@@ -51,8 +51,8 @@ if(isset($_POST['submit']))
 {
     // process the form
     // get the data from login form
-    $username = $_POST['username'];
-    $password = md5($_POST['password']); //Password Encryption with MD5
+    $username = mysqli_real_escape_string($conn,$_POST['username']);
+    $password = mysqli_real_escape_string($conn, md5($_POST['password'])); //Password Encryption with MD5
 
     // sql to check if the user with username and password exist
     $sql = "SELECT * FROM tbl_admin

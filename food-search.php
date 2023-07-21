@@ -19,7 +19,7 @@
         <div class="container">
             <?php
                 
-                $search = $_POST['search'];
+                $search = mysqli_real_escape_string($conn, $_POST['search']);
 
             ?>
             <h2>Foods on Your Search <a href="#" class="text-white"><?php echo $search ?></a></h2>
@@ -38,6 +38,8 @@
             <?php 
 
                 //SQL Query to Get foods based on search keyword
+                // "SELECT * FROM tbl_food WHERE title like '%%' OR description like '%%'
+                // when the query is like this if someone searches for soemthing with quotes it can be a sql security problem because the quote breaks the request
                 $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
 
                 //Execute the Query
