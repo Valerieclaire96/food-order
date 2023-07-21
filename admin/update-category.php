@@ -56,7 +56,7 @@
                     <tr>
                         <td>Title: </td>
                         <td>
-                            <input type="text" name="title" value="<?php echo $title; ?>" />
+                            <input type="text" name="title" placeholder="<?php echo $title; ?>" value="<?php echo $title; ?>" />
                         </td>
                     </tr>
                     <tr>

@@ -58,7 +58,7 @@
                                         <?php
                                     }
                                 ?>
-                                <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                                <h3 class=""><?php echo $title; ?></h3>
                             </div>
                         </a>
                         <?php
@@ -83,23 +83,23 @@
             <h2 class="text-center">Food Menu</h2>
             
             <?php
-                 $sql = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+                 $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
                  // execute SQL query
-                 $res = mysqli_query($conn, $sql);
+                 $res2 = mysqli_query($conn, $sql2);
                  // count row to if the caregory is available or not
-                 $count = mysqli_num_rows($res);
+                 $count2 = mysqli_num_rows($res2);
 
-                 if($count > 0)
+                 if($count2 > 0)
                 {
                     // categories avaibale
-                    while($row = mysqli_fetch_assoc($res))
+                    while($row2 = mysqli_fetch_assoc($res2))
                     {
                         // get the values of the categories ex title, image_name, and id
-                        $id = $row['id'];
-                        $title = $row['title'];
-                        $image_name = $row['image_name'];
-                        $price = $row['price'];
-                        $description = $row['description'];
+                        $id = $row2['id'];
+                        $title = $row2['title'];
+                        $image_name = $row2['image_name'];
+                        $price = $row2['price'];
+                        $description = $row2['description'];
 
                         ?>         
                         <div class="food-menu-box">
@@ -114,17 +114,17 @@
                         {
                             // image avaible
                             ?>
-                                <img height="125px;" src="<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
+                                <img height="125px;"  src="<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
                             <?php
                         }
                     ?>
                             </div>
 
                             <div class="food-menu-desc">
-                                <h4><?php $title; ?></h4>
-                                <p class="food-price"><?php $price; ?></p>
+                                <h4><?php echo $title; ?></h4>
+                                <p class="food-price">$<?php echo $price; ?></p>
                                 <p class="food-detail">
-                                <?php $description; ?>
+                                <?php echo $description; ?>
                                 </p>
                                 <br>
 

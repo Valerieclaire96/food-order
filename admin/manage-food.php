@@ -42,7 +42,7 @@
                         <th>Category:</th>
                         <th>Featured:</th>
                         <th>Active:</th>
-                        <th>Actions</th>
+                        <th>Actions:</th>
                     </tr>
                     <?php
                     // Query to get all admin
@@ -94,8 +94,10 @@
                                             }
                                             ?>
                                             </td>
+                                        <td> <?php echo $category_id; ?> </td>
                                         <td> <?php echo $featured; ?> </td>
                                         <td> <?php echo $active; ?> </td>
+
                                         <td>
                                             <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn secondary">Update Food</a>
                                             <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>" class="btn danger">Delete Food</a>

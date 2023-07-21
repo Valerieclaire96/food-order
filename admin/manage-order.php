@@ -29,9 +29,6 @@
                         <th>Order Date</th>
                         <th>Status</th>
                         <th>Customer Name</th>
-                        <th>Customer Contact</th>
-                        <th>Customer Email</th>
-                        <th>Customer Address</th>
                         <th>Actions</th>
 
                     </tr>
@@ -62,9 +59,7 @@
                                 $order_date = $row['order_date'];
                                 $status = $row['status'];
                                 $customer_name = $row['customer_name'];
-                                $customer_contact = $row['customer_contact'];
-                                $customer_email = $row['customer_email'];
-                                $customer_address = $row['customer_address'];
+                              
 
                                 ?>
                                 <tr>
@@ -76,9 +71,7 @@
                                     <td><?php echo $order_date; ?></td>
                                     <td><?php echo $status; ?></td>
                                     <td><?php echo $customer_name; ?></td>
-                                    <td><?php echo $customer_contact; ?></td>
-                                    <td><?php echo $customer_email; ?></td>
-                                    <td><?php echo $customer_address; ?></td>
+                                    
                                     <td>
                                         <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn secondary">Update Order</a>
                                     </td>
