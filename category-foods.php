@@ -20,16 +20,16 @@
         {
             // category id is set and get the id
             $category_id = $_GET['category_id'];
-            $sql = "SELECT title 
+            $sql1 = "SELECT title 
             FROM tbl_category WHERE 
             id = $category_id";
 
             // execute SQL query
-            $res = mysqli_query($conn, $sql);
+            $res1 = mysqli_query($conn, $sql1);
 
             //get the title 
-            $row = mysqli_fetch_assoc($res);
-            $category_title = $row['title'];
+            $row1 = mysqli_fetch_assoc($res1);
+            $category_title = $row1['title'];
 
         }
         else
@@ -102,7 +102,7 @@
                                         <?php echo $description; ?>
                                     </p>
                                     <br>
-                                    <a href="<?php echo SITEURL; ?>/order.php" class="btn btn-primary">Order Now</a>
+                                    <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
                                 </div>
                             </div>
                         

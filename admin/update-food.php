@@ -59,31 +59,31 @@
                         <tr>
                             <td>Title: </td>
                             <td>
-                                <input type="text" name="title" placeholder="Enter Title"/>
+                                <input type="text" name="title" value="<?php echo $title; ?>"/>
                             </td>
                         </tr>
                         <tr>
                             <td>Description: </td>
                             <td>
-                                <textarea  name="description" placeholder="Enter Description"></textarea>
+                                <textarea  name="description" value="<?php echo $description; ?>"></textarea>
                             </td>
                         </tr>
                         <tr>
                             <td>Price: </td>
                             <td>
-                                <input type="number" name="price" placeholder="Enter Price"/>
+                                <input type="number" name="price" value="<?php echo $price; ?>"/>
                             </td>
                         </tr>
                         <tr>
                             <td>Image: </td>
                             <td>
-                                <input type="text" name="image_name" placeholder="Enter image URL"/>
+                                <input type="text" name="image_name" value="<?php echo $image_name; ?>"/>
                             </td>
                         </tr>
                         <tr>
                             <td>Category: </td>
                             <td>
-                                <input type="text" name="category_id" placeholder="Enter Cateogry ID"/>
+                                <input type="text" name="category_id" value="<?php echo $category_id; ?>"/>
                             </td>
                         </tr>
                         <tr>
